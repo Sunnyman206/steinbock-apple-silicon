@@ -109,4 +109,3 @@ with open('panel.csv', 'w') as f:
 - [Steinbock documentation](https://bodenmillergroup.github.io/steinbock)
 - [Steinbock GitHub](https://github.com/BodenmillerGroup/steinbock)
 - [DeepCell / Mesmer](https://github.com/vanvalenlab/deepcell-tf)
-- [IMmuneCite workflow — Barbetta et al., Sci Rep 15, 9394 (2025)](https://doi.org/10.1038/s41598-025-93379-w)
