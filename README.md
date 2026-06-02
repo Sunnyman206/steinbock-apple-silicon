@@ -40,6 +40,24 @@ steinbock --version
 
 For full pipeline usage, refer to the [official Steinbock documentation](https://bodenmillergroup.github.io/steinbock).
 
+### Note for collaborators with an existing Steinbock install
+
+The installer adds a `steinbock` alias pointing to the `steinbock-arm64` image. It will **not** overwrite an existing alias — if you already have a `steinbock` alias in `~/.zshrc` (e.g. pointing to the official `ghcr.io` image or a `steinbock.sh` wrapper), the installer will skip the alias step silently and your existing alias will remain unchanged.
+
+In that case, either update your alias manually in `~/.zshrc`:
+
+```bash
+alias steinbock='docker run --rm --entrypoint steinbock -v "$PWD":/data steinbock-arm64'
+```
+
+Or call the ARM64 image directly without relying on the alias:
+
+```bash
+docker run --rm --entrypoint steinbock -v "$PWD":/data steinbock-arm64 --version
+```
+
+The official `ghcr.io/bodenmillergroup/steinbock` image is unaffected — both images coexist under separate tags and do not interfere with each other.
+
 ---
 
 ## Critical: panel.csv deepcell column
